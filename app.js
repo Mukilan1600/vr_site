@@ -4,9 +4,16 @@ var cors = require("cors");
 var mongoose = require("mongoose");
 var morgan = require("morgan");
 var path = require("path");
+var config = require('./config/database');
 var queryString = require('querystring');
-
 var app = express();
+var User = require('./models/user')
+
+mongoose.connect(config.database,{useNewUrlParser: true, useUnifiedTopology: true});
+
+mongoose.connection.on('connected', () => {
+    console.log("Database connection successfull");
+});
 
 //Require cors and morgan for cross-site and debugging
 app.use(cors());
@@ -23,7 +30,6 @@ const port = process.env.PORT || 3000;
 
 app.post("/submit",(req,res) => {
     var name = req.body.name,gender = req.body.gender,age = req.body.age,affection_rate=0;
-    console.log(req.body);
     for(var key in req.body)
         if(req.body[key]=="yes") affection_rate++; 
     var prob="Low";
@@ -31,7 +37,13 @@ app.post("/submit",(req,res) => {
         prob="High";
     else if(affection_rate > 5)
         prob="Medium";
-    console.log(affection_rate);
+    let newUser = new User({
+        name: name,
+        gender: gender,
+        age: age,
+        affectionRate: affection_rate
+    });
+    User.log_response(newUser);
     var query=queryString.stringify({
         "probability":prob
     })
