@@ -23,15 +23,16 @@ const port = process.env.PORT || 3000;
 
 app.post("/submit",(req,res) => {
     var name = req.body.name,gender = req.body.gender,age = req.body.age,affection_rate=0;
+    console.log(req.body);
     for(var key in req.body)
         if(req.body[key]=="yes") affection_rate++; 
     var prob="Low";
-    if(affection_rate>5)
-        prob="Medium";
-    else if(affection_rate > 7)
+    if(affection_rate>7)
         prob="High";
+    else if(affection_rate > 5)
+        prob="Medium";
+    console.log(affection_rate);
     var query=queryString.stringify({
-        "name":name,
         "probability":prob
     })
     return res.redirect('/result.html?'+query);
