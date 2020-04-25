@@ -4,6 +4,7 @@ var cors = require("cors");
 var mongoose = require("mongoose");
 var morgan = require("morgan");
 var path = require("path");
+var queryString = require('querystring');
 
 var app = express();
 
@@ -11,14 +12,29 @@ var app = express();
 app.use(cors());
 app.use(morgan("default"));
 app.use(body_parser.json());
+app.use(body_parser.urlencoded({
+    extended:true
+}));
 
 //Set static path
 app.use(express.static(path.join(__dirname,'public')));
 
 const port = process.env.PORT || 3000;
 
-app.use("/submit",(req,res) => {
-    console.log(req.body.name);
+app.post("/submit",(req,res) => {
+    var name = req.body.name,gender = req.body.gender,age = req.body.age,affection_rate=0;
+    for(var key in req.body)
+        if(req.body[key]=="yes") affection_rate++; 
+    var prob="Low";
+    if(affection_rate>5)
+        prob="Medium";
+    else if(affection_rate > 7)
+        prob="High";
+    var query=queryString.stringify({
+        "name":name,
+        "probability":prob
+    })
+    return res.redirect('/result.html?'+query);
 });
 
 app.listen(port,()=>{

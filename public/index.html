@@ -17,18 +17,16 @@
       <div class="jumbotron container text-center" style="margin-top:100px;height: 300px;">
         <div id="carouselSurvey" data-interval="false" class="col-12 align-self-center carousel slide align-middle" data-ride="carousel">
             <div class="carousel-inner">
-            <form>
+            <form method="POST" action="/submit">
                 <div class="carousel-item active">
                     <div class="form-group mb-3">
                         <label for="name">Name</label>
                         <div style="margin-left: 30%;width: 40%;">
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
                         </div>
                       </div>
                     <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
                         <span>Next</span>
-                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span> -->
                     </button>
                 </div>
                 <div class="carousel-item">
@@ -56,15 +54,13 @@
                 </div>
                 <div class="carousel-item">
                     <div class="form-group mb-3">
-                        <label for="name">Age</label>
+                        <label for="age">Age</label>
                         <div style="margin-left: 43%;width: 15%;">
-                            <input type="number" class="form-control" id="age" placeholder="Age">
+                            <input type="number" class="form-control" id="age" name="age">
                         </div>
                       </div>
                     <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
                         <span>Next</span>
-                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span> -->
                     </button>
                 </div>
                 <div class="carousel-item">
@@ -238,7 +234,7 @@
                     </button>
                 </div>
                 <div class="carousel-item">
-                    <h2>You can submit the survey to get your result or go back and change your responses.</h2>
+                    <h2 class="mb-3">You can submit the survey to get your result or go back and change your responses.</h2>
                     <button type="submit" class="btn btn-success">Submit</button>
                     <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
                         <span>Go back</span>
@@ -249,10 +245,9 @@
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
