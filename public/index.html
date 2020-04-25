@@ -15,43 +15,183 @@
         <a class="navbar-brand" href="/">Are You Acrophobic?</a>
       </nav>
       <div class="jumbotron container text-center" style="margin-top:100px;height: 300px;">
-        <div id="carouselExampleInterval" data-interval="false" class="col-12 align-self-center carousel slide align-middle" data-ride="carousel">
+        <div id="carouselSurvey" data-interval="false" class="col-12 align-self-center carousel slide align-middle" data-ride="carousel">
             <div class="carousel-inner">
             <form>
                 <div class="carousel-item active">
                     <h2>Do you avoid high buildings?</h2>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="high-buildings-yes" name="high-buildings" required>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="high-buildings-yes" value="yes" name="high-building" required>
                         <label class="custom-control-label" for="high-buildings-yes">Yes</label>
                     </div>
-                    <div class="custom-control custom-radio mb-3">
-                        <input type="radio" class="custom-control-input" id="high-buildings-no" name="high-buildings" required>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="high-buildings-no" value="no" name="high-building" required>
                         <label class="custom-control-label" for="high-buildings-no">No</label>
                     </div>
-                    <button class="btn btn-primary" href="#carouselExampleInterval" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span> -->
                     </button>
                 </div>
                 <div class="carousel-item">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    <h2>Would you climb up a ladder?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="climb-ladder-yes" value="yes" name="climb-ladder" required>
+                        <label class="custom-control-label" for="climb-ladder-yes">Yes</label>
                     </div>
-                    <button class="btn btn-primary" href="#carouselExampleInterval" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="climb-ladder-no" value="no" name="climb-ladder" required>
+                        <label class="custom-control-label" for="climb-ladder-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
                     </button>
-                    <button class="btn btn-primary" href="#carouselExampleInterval" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
                     </button>
                 </div>
                 <div class="carousel-item">
+                    <h2>Do you dramatize situations involving heights in your mind? Do you see pictures or   movies, or hear self-talk or other dialog in your mind?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="dramatize-yes" value="yes" name="dramatize" required>
+                        <label class="custom-control-label" for="dramatize-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="dramatize-no" value="no" name="dramatize" required>
+                        <label class="custom-control-label" for="dramatize-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>If you were to get rid of your fear of heights, would it make a difference?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="difference-yes" value="yes" name="difference" required>
+                        <label class="custom-control-label" for="difference-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="difference-no" value="no" name="difference" required>
+                        <label class="custom-control-label" for="difference-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>Are you afraid of falling?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="fear-yes" value="yes" name="fear" required>
+                        <label class="custom-control-label" for="fear-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="fear-no" value="no" name="fear" required>
+                        <label class="custom-control-label" for="fear-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>Do you feel that you can't trust your own sense of balance when at a height?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="balance-yes" value="yes" name="balance" required>
+                        <label class="custom-control-label" for="balance-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="balance-no" value="no" name="balance" required>
+                        <label class="custom-control-label" for="balance-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>Do you think that your problem with heights affect your daily functioing?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="problem-yes" value="yes" name="problem" required>
+                        <label class="custom-control-label" for="problem-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="problem-no" value="no" name="problem" required>
+                        <label class="custom-control-label" for="problem-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>When at a height do you search for something to hold on to?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="hold-yes" value="yes" name="hold" required>
+                        <label class="custom-control-label" for="hold-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="hold-no" value="no" name="hold" required>
+                        <label class="custom-control-label" for="hold-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>Does the thought of heights terrify you?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="thoughts-yes" value="yes" name="thoughts" required>
+                        <label class="custom-control-label" for="thoughts-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="thoughts-no" value="no" name="thoughts" required>
+                        <label class="custom-control-label" for="thoughts-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>Have you taken any sort of medication to cope?</h2>
+                    <div class="custom-control custom-radio" required>
+                        <input type="radio" class="custom-control-input" id="medication-yes" value="yes" name="medication" required>
+                        <label class="custom-control-label" for="medication-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3" required>
+                        <input type="radio" class="custom-control-input" id="medication-no" value="no" name="medication" required>
+                        <label class="custom-control-label" for="medication-no">No</label>
+                    </div>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
+                    </button>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="next">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="carousel-item">
+                    <h2>You can submit the survey to get your result or go back and change your responses.</h2>
                     <button type="submit" class="btn btn-success">Submit</button>
-                    <button class="btn btn-primary" href="#carouselExampleInterval" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                    <button class="btn btn-primary" href="#carouselSurvey" role="button" data-slide="prev">
+                        <span>Go back</span>
                     </button>
                 </div>
             </form>
