@@ -30,6 +30,8 @@
         var query = window.location.search;
         var queryParams = new URLSearchParams(query);
         var prob = queryParams.get("probability");
+        if(prob!='Low'&&prob!="Medium"&&prob!="High")
+            window.location.replace("/");
         if(prob=="Medium" || prob=="High"){
             if(prob=="Medium")
                 $('#probability').css("color","#FBC109");
