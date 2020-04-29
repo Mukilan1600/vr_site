@@ -30,12 +30,16 @@ const port = process.env.PORT || 3000;
 
 app.post("/submit",(req,res) => {
     var name = req.body.name,gender = req.body.gender,age = req.body.age,affection_rate=0;
-    for(var key in req.body)
-        if(req.body[key]=="yes") affection_rate++; 
+    for(var key in req.body){
+        if(key!="name"&&key!="gender"&&key!="age"&&key!="floor")
+            affection_rate += Number(req.body[key]); 
+    }
+    affection_rate-=Number(req.body["floor"])/20;
+    affection_rate*=(50/Number(age));
     var prob="Low";
-    if(affection_rate>7)
+    if(affection_rate>6.5)
         prob="High";
-    else if(affection_rate > 5)
+    else if(affection_rate>3.5)
         prob="Medium";
     let newUser = new User({
         name: name,
@@ -43,6 +47,7 @@ app.post("/submit",(req,res) => {
         age: age,
         affectionRate: affection_rate
     });
+    console.log(affection_rate);
     User.log_response(newUser);
     var query=queryString.stringify({
         "probability":prob
